@@ -15,7 +15,7 @@ body {
   max-width: 500px;
   margin: 0 auto;
   background-color: #fff;
-  box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   height: 360px;
 }
 
@@ -31,7 +31,7 @@ body {
 
 .input-form {
   display: flex;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .task-input {
@@ -74,8 +74,8 @@ body {
 }
 
 .list {
-  padding: 0px 1rem;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  padding: 0 1rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .para {
@@ -88,7 +88,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding: 0 0 0 1rem;
-  border-bottom: 1px solid rgba(0,0,0,0.08);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
   height: 50px;
 }
 

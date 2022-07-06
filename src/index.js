@@ -1,12 +1,7 @@
-import {v4 as uuidv4} from 'uuid';
-import './styles/main.css';
-import enter from './assets/enter.png';
+import './styles/style.css';
 import setting from './assets/setting.jpg';
-import refresh from './assets/refresh.jpg';
 
-document.querySelector('.heading-text');
-
-let tasks = [
+const tasks = [
   {
     description: 'wash the dishes',
     completed: false,
@@ -29,31 +24,31 @@ let tasks = [
   },
 ];
 
-const listLoad = () => { 
+const listLoad = () => {
   tasks.forEach((each) => {
-  const taskList = document.createElement('li');
-  taskList.className = 'list';
-  const taskLabel = document.createElement('label');
-  taskLabel.className = 'list-label';
-  taskLabel.setAttribute('for', each.index);
-  const checkDescContainer = document.createElement('div');
-  checkDescContainer.className = 'description-container';
-  const taskCheck = document.createElement('input');
-  taskCheck.setAttribute('type', 'checkbox');
-  taskCheck.className = 'checkbox';
-  checkDescContainer.appendChild(taskCheck);
-  const taskDescription = document.createElement('p');
-  taskDescription.className = 'para';
-  taskDescription.textContent = each.description;
-  checkDescContainer.appendChild(taskDescription);
-  taskLabel.appendChild(checkDescContainer);
-  const moveIcon = document.createElement('img');
-  moveIcon.className = 'move-icon';
-  moveIcon.src = setting;
-  taskLabel.appendChild(moveIcon);
-  taskList.appendChild(taskLabel);
-  document.querySelector('.list-container').appendChild(taskList);
+    const taskList = document.createElement('li');
+    taskList.className = 'list';
+    const taskLabel = document.createElement('label');
+    taskLabel.className = 'list-label';
+    taskLabel.setAttribute('for', each.index);
+    const checkDescContainer = document.createElement('div');
+    checkDescContainer.className = 'description-container';
+    const taskCheck = document.createElement('input');
+    taskCheck.setAttribute('type', 'checkbox');
+    taskCheck.className = 'checkbox';
+    checkDescContainer.appendChild(taskCheck);
+    const taskDescription = document.createElement('p');
+    taskDescription.className = 'para';
+    taskDescription.textContent = each.description;
+    checkDescContainer.appendChild(taskDescription);
+    taskLabel.appendChild(checkDescContainer);
+    const moveIcon = document.createElement('img');
+    moveIcon.className = 'move-icon';
+    moveIcon.src = setting;
+    taskLabel.appendChild(moveIcon);
+    taskList.appendChild(taskLabel);
+    document.querySelector('.list-container').appendChild(taskList);
 });
-}
+};
 
 listLoad();

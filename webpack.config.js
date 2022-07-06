@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
@@ -10,7 +10,7 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: '[name][contenthash].js',
     clean: true,
-    assetModuleFilename: '[name][ext]'
+    assetModuleFilename: '[name][ext]',
   },
   devtool: 'source-map',
   devServer: {
@@ -29,7 +29,7 @@ module.exports = {
         test: /\.css$/i,
         use: [
           'style-loader',
-          'css-loader'
+          'css-loader',
         ],
       },
       {
@@ -44,7 +44,7 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource'
+        type: 'asset/resource',
       },
     ],
   },
@@ -52,7 +52,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: 'To-Do-List: list structure',
       filename: 'index.html',
-      template: 'src/index.html'
-    })
-  ]
-}
+      template: 'src/index.html',
+    }),
+  ],
+};
