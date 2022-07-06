@@ -16,6 +16,7 @@ body {
   margin: 0 auto;
   background-color: #fff;
   box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
+  height: 360px;
 }
 
 .list-container {
@@ -106,4 +107,20 @@ body {
 .refresh-icon {
   cursor: pointer;
   padding: 0 1rem;
+}
+
+.clearBtn {
+  font-size: 16px;
+  opacity: 0.5;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  margin: 1rem auto;
+  display: block;
+}
+
+.clearBtn:hover {
+  cursor: pointer;
+  opacity: 1;
+  text-decoration: underline;
 }
