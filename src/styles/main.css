@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+  box-sizing: border-box;
+}
+
+.list-wrapper {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.list-container {
+  list-style: none;
+}
+
+.list-lablel {
+  display: flex;
+  gap: 1rem;
+}
+
+.input-form {
+  display: flex;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.task-input {
+  width: 100%;
+  height: 42px;
+  padding: 0 120px 0 1rem;
+  line-height: 50px;
+  border: none;
+  font-style: italic
+}
+
+.enter-icon {
+  cursor: pointer;
+  background-color: transparent;
+  background-image: url(../../dist/enter.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 40px;
+  height: 50px;
+  border: none;
+}
+
+.move-icon {
+  float: right;
+  margin-right: -3em;
+  padding: 0 0.5rem;
+  height: 50px;
+  line-height: 0;
+  cursor: move;
+  background-image: url(../../dist/setting.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.list {
+  font-weight: 300;
+  padding: 0px 3rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+}
+
+.list label p {
+  font-weight: 300;
+  font-size: 1rem;
+}
+
