@@ -24,9 +24,7 @@ const tasks = [
   },
 ];
 
-tasks.sort((a, b) => {
-  return a.index - b.index
-})
+tasks.sort((a, b) => a.index - b.index);
 
 const listLoad = () => {
   tasks.forEach((each) => {
