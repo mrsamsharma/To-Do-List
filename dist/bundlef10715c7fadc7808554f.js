@@ -16,12 +16,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 /* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/getUrl.js */ "./node_modules/css-loader/dist/runtime/getUrl.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2__);
 // Imports
 
 
+
+var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/enter.png */ "./src/assets/enter.png"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/setting.jpg */ "./src/assets/setting.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap);"]);
+var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
+var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-lablel {\r\n  display: flex;\r\n  gap: 1rem;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(https://localhost:3000/setting.png);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.move-icon {\r\n  float: right;\r\n  margin-right: -3em;\r\n  padding: 0 0.5rem;\r\n  height: 50px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(https://localhost:3000/setting.png);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  font-weight: 300;\r\n  padding: 0px 3rem;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.list label p {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/styles/main.css"],"names":[],"mappings":"AAAA;EACE,SAAS;EACT,UAAU;EACV,6EAA6E;EAC7E,sBAAsB;AACxB;;AAEA;EACE,gBAAgB;EAChB,cAAc;AAChB;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,SAAS;AACX;;AAEA;EACE,aAAa;EACb,yCAAyC;AAC3C;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,uBAAuB;EACvB,iBAAiB;EACjB,YAAY;EACZ;AACF;;AAEA;EACE,eAAe;EACf,6BAA6B;EAC7B,yDAAyD;EACzD,4BAA4B;EAC5B,2BAA2B;EAC3B,WAAW;EACX,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,YAAY;EACZ,kBAAkB;EAClB,iBAAiB;EACjB,YAAY;EACZ,cAAc;EACd,YAAY;EACZ,yDAAyD;EACzD,4BAA4B;EAC5B,2BAA2B;AAC7B;;AAEA;EACE,gBAAgB;EAChB,iBAAiB;EACjB,yCAAyC;AAC3C;;AAEA;EACE,gBAAgB;EAChB,eAAe;AACjB","sourcesContent":["* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-lablel {\r\n  display: flex;\r\n  gap: 1rem;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(https://localhost:3000/setting.png);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.move-icon {\r\n  float: right;\r\n  margin-right: -3em;\r\n  padding: 0 0.5rem;\r\n  height: 50px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(https://localhost:3000/setting.png);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  font-weight: 300;\r\n  padding: 0px 3rem;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.list label p {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n  background-color: #fff;\r\n  box-shadow: 0px 2px 8px rgba(0,0,0,0.15);\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-label {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic;\r\n  font-size: 15px;\r\n  outline: none;\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  gap: 1rem;\r\n  align-items: center;\r\n}\r\n\r\n.move-icon {\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  padding: 0px 1rem;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.para {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n}\r\n\r\n.title-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0 0 0 1rem;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n  height: 50px;\r\n}\r\n\r\n.hidden-input {\r\n  display: none;\r\n}\r\n\r\n.heading-input {\r\n  border: none;\r\n  color: #545862;\r\n  font-size: 15px;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.refresh-icon {\r\n  cursor: pointer;\r\n  padding: 0 1rem;\r\n}", "",{"version":3,"sources":["webpack://./src/styles/main.css"],"names":[],"mappings":"AAEA;EACE,SAAS;EACT,UAAU;EACV,oCAAoC;EACpC,sBAAsB;AACxB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,wCAAwC;AAC1C;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,yCAAyC;AAC3C;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,uBAAuB;EACvB,iBAAiB;EACjB,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,eAAe;EACf,6BAA6B;EAC7B,yDAA0C;EAC1C,4BAA4B;EAC5B,2BAA2B;EAC3B,WAAW;EACX,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,aAAa;EACb,SAAS;EACT,mBAAmB;AACrB;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,WAAW;EACX,cAAc;EACd,YAAY;EACZ,yDAA4C;EAC5C,4BAA4B;EAC5B,2BAA2B;AAC7B;;AAEA;EACE,iBAAiB;EACjB,yCAAyC;AAC3C;;AAEA;EACE,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB;EACnB,yCAAyC;EACzC,YAAY;AACd;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,cAAc;EACd,eAAe;EACf,gBAAgB;EAChB,aAAa;AACf;;AAEA;EACE,eAAe;EACf,eAAe;AACjB","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n  background-color: #fff;\r\n  box-shadow: 0px 2px 8px rgba(0,0,0,0.15);\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-label {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic;\r\n  font-size: 15px;\r\n  outline: none;\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(../assets/enter.png);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  gap: 1rem;\r\n  align-items: center;\r\n}\r\n\r\n.move-icon {\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(../assets/setting.jpg);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  padding: 0px 1rem;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.para {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n}\r\n\r\n.title-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0 0 0 1rem;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n  height: 50px;\r\n}\r\n\r\n.hidden-input {\r\n  display: none;\r\n}\r\n\r\n.heading-input {\r\n  border: none;\r\n  color: #545862;\r\n  font-size: 15px;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.refresh-icon {\r\n  cursor: pointer;\r\n  padding: 0 1rem;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -135,6 +143,44 @@ module.exports = function (cssWithMappingToString) {
   };
 
   return list;
+};
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/runtime/getUrl.js":
+/*!********************************************************!*\
+  !*** ./node_modules/css-loader/dist/runtime/getUrl.js ***!
+  \********************************************************/
+/***/ ((module) => {
+
+
+
+module.exports = function (url, options) {
+  if (!options) {
+    options = {};
+  }
+
+  if (!url) {
+    return url;
+  }
+
+  url = String(url.__esModule ? url.default : url); // If url is already wrapped in quotes, remove them
+
+  if (/^['"].*['"]$/.test(url)) {
+    url = url.slice(1, -1);
+  }
+
+  if (options.hash) {
+    url += options.hash;
+  } // Should url be wrapped?
+  // See https://drafts.csswg.org/css-values-3/#urls
+
+
+  if (/["'() \t\n]|(%20)/.test(url) || options.needQuotes) {
+    return "\"".concat(url.replace(/"/g, '\\"').replace(/\n/g, "\\n"), "\"");
+  }
+
+  return url;
 };
 
 /***/ }),
@@ -540,13 +586,23 @@ module.exports = __webpack_require__.p + "enter.png";
 
 /***/ }),
 
-/***/ "./src/assets/setting.png":
+/***/ "./src/assets/refresh.jpg":
 /*!********************************!*\
-  !*** ./src/assets/setting.png ***!
+  !*** ./src/assets/refresh.jpg ***!
   \********************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-module.exports = __webpack_require__.p + "setting.png";
+module.exports = __webpack_require__.p + "refresh.jpg";
+
+/***/ }),
+
+/***/ "./src/assets/setting.jpg":
+/*!********************************!*\
+  !*** ./src/assets/setting.jpg ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "setting.jpg";
 
 /***/ })
 
@@ -575,6 +631,9 @@ module.exports = __webpack_require__.p + "setting.png";
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
+/******/ 	
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = __webpack_modules__;
 /******/ 	
 /************************************************************************/
 /******/ 	/* webpack/runtime/compat get default export */
@@ -649,6 +708,32 @@ module.exports = __webpack_require__.p + "setting.png";
 /******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/jsonp chunk loading */
+/******/ 	(() => {
+/******/ 		__webpack_require__.b = document.baseURI || self.location.href;
+/******/ 		
+/******/ 		// object to store loaded and loading chunks
+/******/ 		// undefined = chunk not loaded, null = chunk preloaded/prefetched
+/******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
+/******/ 		var installedChunks = {
+/******/ 			"bundle": 0
+/******/ 		};
+/******/ 		
+/******/ 		// no chunk on demand loading
+/******/ 		
+/******/ 		// no prefetching
+/******/ 		
+/******/ 		// no preloaded
+/******/ 		
+/******/ 		// no HMR
+/******/ 		
+/******/ 		// no HMR manifest
+/******/ 		
+/******/ 		// no on chunks loaded
+/******/ 		
+/******/ 		// no jsonp function
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/nonce */
 /******/ 	(() => {
 /******/ 		__webpack_require__.nc = undefined;
@@ -664,11 +749,14 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.css */ "./src/styles/main.css");
 /* harmony import */ var _assets_enter_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/enter.png */ "./src/assets/enter.png");
-/* harmony import */ var _assets_setting_png__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/setting.png */ "./src/assets/setting.png");
+/* harmony import */ var _assets_setting_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/setting.jpg */ "./src/assets/setting.jpg");
+/* harmony import */ var _assets_refresh_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/refresh.jpg */ "./src/assets/refresh.jpg");
 
 
 
 
+
+document.querySelector('.heading-text');
 var tasks = [{
   description: 'wash the dishes',
   completed: false,
@@ -694,17 +782,20 @@ var listLoad = function listLoad() {
     var taskLabel = document.createElement('label');
     taskLabel.className = 'list-label';
     taskLabel.setAttribute('for', each.index);
+    var checkDescContainer = document.createElement('div');
+    checkDescContainer.className = 'description-container';
     var taskCheck = document.createElement('input');
     taskCheck.setAttribute('type', 'checkbox');
     taskCheck.className = 'checkbox';
-    taskLabel.appendChild(taskCheck);
+    checkDescContainer.appendChild(taskCheck);
     var taskDescription = document.createElement('p');
     taskDescription.className = 'para';
     taskDescription.textContent = each.description;
-    taskLabel.appendChild(taskDescription);
+    checkDescContainer.appendChild(taskDescription);
+    taskLabel.appendChild(checkDescContainer);
     var moveIcon = document.createElement('img');
     moveIcon.className = 'move-icon';
-    moveIcon.src = '../../dist/setting.png';
+    moveIcon.src = _assets_setting_jpg__WEBPACK_IMPORTED_MODULE_2__;
     taskLabel.appendChild(moveIcon);
     taskList.appendChild(taskLabel);
     document.querySelector('.list-container').appendChild(taskList);
@@ -716,4 +807,4 @@ listLoad();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleb727bebb1a9fb18020c5.js.map
+//# sourceMappingURL=bundlef10715c7fadc7808554f.js.map
