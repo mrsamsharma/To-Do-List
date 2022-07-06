@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+  <div class="list-wrapper">
+    <div class="title-header">
+      <form>
+        <input type="text" value="Demo" class="heading-input">
+        <input type="submit" class="hidden-input">
+      </form>
+      <img src="http://localhost:3000/refresh.jpg" class="refresh-icon" alt="refresh-icon">
+    </div>
+    <form class="input-form">
+      <input type="text" placeholder="Add to your list..." class="task-input">
+      <input type="submit" value class="enter-icon">
+    </form>
+    <ul class="list-container"></ul>
+    <button type="button" class="clearBtn">Clear all completed</button>
+  </div>
+</body>
+</html>
