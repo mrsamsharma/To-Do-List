@@ -1,5 +1,8 @@
 import './styles/style.css';
 import setting from './assets/setting.jpg';
+import refresh from './assets/refresh.jpg';
+
+document.querySelector('.refresh-icon').setAttribute('src', refresh);
 
 const tasks = [
   {

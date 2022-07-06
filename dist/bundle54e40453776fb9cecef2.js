@@ -586,6 +586,16 @@ module.exports = __webpack_require__.p + "enter.png";
 
 /***/ }),
 
+/***/ "./src/assets/refresh.jpg":
+/*!********************************!*\
+  !*** ./src/assets/refresh.jpg ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "refresh.jpg";
+
+/***/ }),
+
 /***/ "./src/assets/setting.jpg":
 /*!********************************!*\
   !*** ./src/assets/setting.jpg ***!
@@ -739,8 +749,11 @@ var __webpack_exports__ = {};
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.css */ "./src/styles/style.css");
 /* harmony import */ var _assets_setting_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/setting.jpg */ "./src/assets/setting.jpg");
+/* harmony import */ var _assets_refresh_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/refresh.jpg */ "./src/assets/refresh.jpg");
 
 
+
+document.querySelector('.refresh-icon').setAttribute('src', _assets_refresh_jpg__WEBPACK_IMPORTED_MODULE_2__);
 var tasks = [{
   description: 'Workout at evening',
   completed: false,
@@ -794,4 +807,4 @@ listLoad();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle60f18c240d287559263f.js.map
+//# sourceMappingURL=bundle54e40453776fb9cecef2.js.map
