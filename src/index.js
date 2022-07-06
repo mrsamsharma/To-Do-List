@@ -3,6 +3,11 @@ import setting from './assets/setting.jpg';
 
 const tasks = [
   {
+    description: 'Workout at evening',
+    completed: false,
+    index: 2,
+  },
+  {
     description: 'wash the dishes',
     completed: false,
     index: 0,
@@ -13,16 +18,15 @@ const tasks = [
     index: 1,
   },
   {
-    description: 'Workout at evening',
-    completed: false,
-    index: 2,
-  },
-  {
     description: 'Meet Bill Gates',
     completed: false,
     index: 3,
   },
 ];
+
+tasks.sort((a, b) => {
+  return a.index - b.index
+})
 
 const listLoad = () => {
   tasks.forEach((each) => {

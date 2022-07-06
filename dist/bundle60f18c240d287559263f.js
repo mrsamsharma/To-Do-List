@@ -2,10 +2,10 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/main.css":
-/*!*******************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/main.css ***!
-  \*******************************************************************/
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/style.css":
+/*!********************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/style.css ***!
+  \********************************************************************/
 /***/ ((module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -29,7 +29,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.c
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n  background-color: #fff;\r\n  box-shadow: 0px 2px 8px rgba(0,0,0,0.15);\r\n  height: 360px;\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-label {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic;\r\n  font-size: 15px;\r\n  outline: none;\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  gap: 1rem;\r\n  align-items: center;\r\n}\r\n\r\n.move-icon {\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  padding: 0px 1rem;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.para {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n}\r\n\r\n.title-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0 0 0 1rem;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n  height: 50px;\r\n}\r\n\r\n.hidden-input {\r\n  display: none;\r\n}\r\n\r\n.heading-input {\r\n  border: none;\r\n  color: #545862;\r\n  font-size: 15px;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.refresh-icon {\r\n  cursor: pointer;\r\n  padding: 0 1rem;\r\n}\r\n\r\n.clearBtn {\r\n  font-size: 16px;\r\n  opacity: 0.5;\r\n  outline: none;\r\n  border: none;\r\n  background-color: transparent;\r\n  margin: 1rem auto;\r\n  display: block;\r\n}\r\n\r\n.clearBtn:hover {\r\n  cursor: pointer;\r\n  opacity: 1;\r\n  text-decoration: underline;\r\n}", "",{"version":3,"sources":["webpack://./src/styles/main.css"],"names":[],"mappings":"AAEA;EACE,SAAS;EACT,UAAU;EACV,oCAAoC;EACpC,sBAAsB;AACxB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,wCAAwC;EACxC,aAAa;AACf;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,yCAAyC;AAC3C;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,uBAAuB;EACvB,iBAAiB;EACjB,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,eAAe;EACf,6BAA6B;EAC7B,yDAA0C;EAC1C,4BAA4B;EAC5B,2BAA2B;EAC3B,WAAW;EACX,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,aAAa;EACb,SAAS;EACT,mBAAmB;AACrB;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,WAAW;EACX,cAAc;EACd,YAAY;EACZ,yDAA4C;EAC5C,4BAA4B;EAC5B,2BAA2B;AAC7B;;AAEA;EACE,iBAAiB;EACjB,yCAAyC;AAC3C;;AAEA;EACE,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB;EACnB,yCAAyC;EACzC,YAAY;AACd;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,cAAc;EACd,eAAe;EACf,gBAAgB;EAChB,aAAa;AACf;;AAEA;EACE,eAAe;EACf,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,6BAA6B;EAC7B,iBAAiB;EACjB,cAAc;AAChB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,0BAA0B;AAC5B","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n  background-color: #fff;\r\n  box-shadow: 0px 2px 8px rgba(0,0,0,0.15);\r\n  height: 360px;\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-label {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic;\r\n  font-size: 15px;\r\n  outline: none;\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(../assets/enter.png);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  gap: 1rem;\r\n  align-items: center;\r\n}\r\n\r\n.move-icon {\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(../assets/setting.jpg);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  padding: 0px 1rem;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n}\r\n\r\n.para {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n}\r\n\r\n.title-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0 0 0 1rem;\r\n  border-bottom: 1px solid rgba(0,0,0,0.08);\r\n  height: 50px;\r\n}\r\n\r\n.hidden-input {\r\n  display: none;\r\n}\r\n\r\n.heading-input {\r\n  border: none;\r\n  color: #545862;\r\n  font-size: 15px;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.refresh-icon {\r\n  cursor: pointer;\r\n  padding: 0 1rem;\r\n}\r\n\r\n.clearBtn {\r\n  font-size: 16px;\r\n  opacity: 0.5;\r\n  outline: none;\r\n  border: none;\r\n  background-color: transparent;\r\n  margin: 1rem auto;\r\n  display: block;\r\n}\r\n\r\n.clearBtn:hover {\r\n  cursor: pointer;\r\n  opacity: 1;\r\n  text-decoration: underline;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n  background-color: #fff;\r\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\r\n  height: 360px;\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-label {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic;\r\n  font-size: 15px;\r\n  outline: none;\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  gap: 1rem;\r\n  align-items: center;\r\n}\r\n\r\n.move-icon {\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  padding: 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.para {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n}\r\n\r\n.title-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0 0 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  height: 50px;\r\n}\r\n\r\n.hidden-input {\r\n  display: none;\r\n}\r\n\r\n.heading-input {\r\n  border: none;\r\n  color: #545862;\r\n  font-size: 15px;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.refresh-icon {\r\n  cursor: pointer;\r\n  padding: 0 1rem;\r\n}\r\n\r\n.clearBtn {\r\n  font-size: 16px;\r\n  opacity: 0.5;\r\n  outline: none;\r\n  border: none;\r\n  background-color: transparent;\r\n  margin: 1rem auto;\r\n  display: block;\r\n}\r\n\r\n.clearBtn:hover {\r\n  cursor: pointer;\r\n  opacity: 1;\r\n  text-decoration: underline;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAEA;EACE,SAAS;EACT,UAAU;EACV,oCAAoC;EACpC,sBAAsB;AACxB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,yCAAyC;EACzC,aAAa;AACf;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,4CAA4C;AAC9C;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,uBAAuB;EACvB,iBAAiB;EACjB,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,eAAe;EACf,6BAA6B;EAC7B,yDAA0C;EAC1C,4BAA4B;EAC5B,2BAA2B;EAC3B,WAAW;EACX,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,aAAa;EACb,SAAS;EACT,mBAAmB;AACrB;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,WAAW;EACX,cAAc;EACd,YAAY;EACZ,yDAA4C;EAC5C,4BAA4B;EAC5B,2BAA2B;AAC7B;;AAEA;EACE,eAAe;EACf,4CAA4C;AAC9C;;AAEA;EACE,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB;EACnB,4CAA4C;EAC5C,YAAY;AACd;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,cAAc;EACd,eAAe;EACf,gBAAgB;EAChB,aAAa;AACf;;AAEA;EACE,eAAe;EACf,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,6BAA6B;EAC7B,iBAAiB;EACjB,cAAc;AAChB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,0BAA0B;AAC5B","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n  background-color: #fff;\r\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\r\n  height: 360px;\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-label {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic;\r\n  font-size: 15px;\r\n  outline: none;\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(../assets/enter.png);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  gap: 1rem;\r\n  align-items: center;\r\n}\r\n\r\n.move-icon {\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(../assets/setting.jpg);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  padding: 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.para {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n}\r\n\r\n.title-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0 0 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  height: 50px;\r\n}\r\n\r\n.hidden-input {\r\n  display: none;\r\n}\r\n\r\n.heading-input {\r\n  border: none;\r\n  color: #545862;\r\n  font-size: 15px;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.refresh-icon {\r\n  cursor: pointer;\r\n  padding: 0 1rem;\r\n}\r\n\r\n.clearBtn {\r\n  font-size: 16px;\r\n  opacity: 0.5;\r\n  outline: none;\r\n  border: none;\r\n  background-color: transparent;\r\n  margin: 1rem auto;\r\n  display: block;\r\n}\r\n\r\n.clearBtn:hover {\r\n  cursor: pointer;\r\n  opacity: 1;\r\n  text-decoration: underline;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -216,10 +216,10 @@ module.exports = function (item) {
 
 /***/ }),
 
-/***/ "./src/styles/main.css":
-/*!*****************************!*\
-  !*** ./src/styles/main.css ***!
-  \*****************************/
+/***/ "./src/styles/style.css":
+/*!******************************!*\
+  !*** ./src/styles/style.css ***!
+  \******************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
@@ -238,7 +238,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_main_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./main.css */ "./node_modules/css-loader/dist/cjs.js!./src/styles/main.css");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./style.css */ "./node_modules/css-loader/dist/cjs.js!./src/styles/style.css");
 
       
       
@@ -260,12 +260,12 @@ options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWi
 options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
 options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_main_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
 
 
 
 
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_main_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_main_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_main_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_style_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
@@ -586,16 +586,6 @@ module.exports = __webpack_require__.p + "enter.png";
 
 /***/ }),
 
-/***/ "./src/assets/refresh.jpg":
-/*!********************************!*\
-  !*** ./src/assets/refresh.jpg ***!
-  \********************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-module.exports = __webpack_require__.p + "refresh.jpg";
-
-/***/ }),
-
 /***/ "./src/assets/setting.jpg":
 /*!********************************!*\
   !*** ./src/assets/setting.jpg ***!
@@ -747,17 +737,15 @@ var __webpack_exports__ = {};
   !*** ./src/index.js ***!
   \**********************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/main.css */ "./src/styles/main.css");
-/* harmony import */ var _assets_enter_png__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/enter.png */ "./src/assets/enter.png");
-/* harmony import */ var _assets_setting_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/setting.jpg */ "./src/assets/setting.jpg");
-/* harmony import */ var _assets_refresh_jpg__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./assets/refresh.jpg */ "./src/assets/refresh.jpg");
+/* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.css */ "./src/styles/style.css");
+/* harmony import */ var _assets_setting_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/setting.jpg */ "./src/assets/setting.jpg");
 
 
-
-
-
-document.querySelector('.heading-text');
 var tasks = [{
+  description: 'Workout at evening',
+  completed: false,
+  index: 2
+}, {
   description: 'wash the dishes',
   completed: false,
   index: 0
@@ -766,14 +754,13 @@ var tasks = [{
   completed: false,
   index: 1
 }, {
-  description: 'Workout at evening',
-  completed: false,
-  index: 2
-}, {
   description: 'Meet Bill Gates',
   completed: false,
   index: 3
 }];
+tasks.sort(function (a, b) {
+  return a.index - b.index;
+});
 
 var listLoad = function listLoad() {
   tasks.forEach(function (each) {
@@ -795,7 +782,7 @@ var listLoad = function listLoad() {
     taskLabel.appendChild(checkDescContainer);
     var moveIcon = document.createElement('img');
     moveIcon.className = 'move-icon';
-    moveIcon.src = _assets_setting_jpg__WEBPACK_IMPORTED_MODULE_2__;
+    moveIcon.src = _assets_setting_jpg__WEBPACK_IMPORTED_MODULE_1__;
     taskLabel.appendChild(moveIcon);
     taskList.appendChild(taskLabel);
     document.querySelector('.list-container').appendChild(taskList);
@@ -807,4 +794,4 @@ listLoad();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle83372d034423d01c90b5.js.map
+//# sourceMappingURL=bundle60f18c240d287559263f.js.map
