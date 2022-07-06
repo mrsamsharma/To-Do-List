@@ -48,7 +48,7 @@ const listLoad = () => {
     taskLabel.appendChild(moveIcon);
     taskList.appendChild(taskLabel);
     document.querySelector('.list-container').appendChild(taskList);
-});
+  });
 };
 
 listLoad();
