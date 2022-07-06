@@ -8,25 +8,18 @@
 </head>
 <body>
   <div class="list-wrapper">
-    <form action="submit" class="input-form">
-      <input type="text" placeholder="Add a new task" class="task-input">
+    <div class="title-header">
+      <form>
+        <input type="text" value="Demo" class="heading-input">
+        <input type="submit" class="hidden-input">
+      </form>
+      <img src="http://localhost:3000/refresh.jpg" class="refresh-icon" alt="refresh-icon">
+    </div>
+    <form class="input-form">
+      <input type="text" placeholder="Add to your list..." class="task-input">
       <input type="submit" value class="enter-icon">
     </form>
-    <ul class="list-container">
-      <!-- <li>
-        <label for="1">
-        <input type="checkbox" class="checkbox">
-        <p class="para">wash the dishes</p>
-      </label>
-      </li>
-      <li>
-        <label for="2">
-        <input type="checkbox" class="checkbox">
-        <p class="para">Hey Brother</p>
-      </label>
-      </li> -->
-      
-    </ul>
+    <ul class="list-container"></ul>
   </div>
 </body>
 </html>

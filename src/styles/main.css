@@ -1,22 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', 'Lucida Grande', tahoma, verdana, arial, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f6f6;
 }
 
 .list-wrapper {
   max-width: 500px;
   margin: 0 auto;
+  background-color: #fff;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.15);
 }
 
 .list-container {
   list-style: none;
 }
 
-.list-lablel {
+.list-label {
   display: flex;
-  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .input-form {
@@ -30,13 +39,15 @@
   padding: 0 120px 0 1rem;
   line-height: 50px;
   border: none;
-  font-style: italic
+  font-style: italic;
+  font-size: 15px;
+  outline: none;
 }
 
 .enter-icon {
   cursor: pointer;
   background-color: transparent;
-  background-image: url(../../dist/enter.png);
+  background-image: url(../assets/enter.png);
   background-repeat: no-repeat;
   background-position: center;
   width: 40px;
@@ -44,26 +55,55 @@
   border: none;
 }
 
+.description-container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
 .move-icon {
-  float: right;
-  margin-right: -3em;
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   height: 50px;
+  width: 12px;
   line-height: 0;
   cursor: move;
-  background-image: url(../../dist/setting.png);
+  background-image: url(../assets/setting.jpg);
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .list {
-  font-weight: 300;
-  padding: 0px 3rem;
+  padding: 0px 1rem;
   border-bottom: 1px solid rgba(0,0,0,0.08);
 }
 
-.list label p {
+.para {
   font-weight: 300;
   font-size: 1rem;
 }
 
+.title-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0 0 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  height: 50px;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.heading-input {
+  border: none;
+  color: #545862;
+  font-size: 15px;
+  font-weight: 400;
+  outline: none;
+}
+
+.refresh-icon {
+  cursor: pointer;
+  padding: 0 1rem;
+}

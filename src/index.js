@@ -1,7 +1,10 @@
 import {v4 as uuidv4} from 'uuid';
 import './styles/main.css';
 import enter from './assets/enter.png';
-import setting from './assets/setting.png';
+import setting from './assets/setting.jpg';
+import refresh from './assets/refresh.jpg';
+
+document.querySelector('.heading-text');
 
 let tasks = [
   {
@@ -33,17 +36,20 @@ const listLoad = () => {
   const taskLabel = document.createElement('label');
   taskLabel.className = 'list-label';
   taskLabel.setAttribute('for', each.index);
+  const checkDescContainer = document.createElement('div');
+  checkDescContainer.className = 'description-container';
   const taskCheck = document.createElement('input');
   taskCheck.setAttribute('type', 'checkbox');
   taskCheck.className = 'checkbox';
-  taskLabel.appendChild(taskCheck);
+  checkDescContainer.appendChild(taskCheck);
   const taskDescription = document.createElement('p');
   taskDescription.className = 'para';
   taskDescription.textContent = each.description;
-  taskLabel.appendChild(taskDescription);
+  checkDescContainer.appendChild(taskDescription);
+  taskLabel.appendChild(checkDescContainer);
   const moveIcon = document.createElement('img');
   moveIcon.className = 'move-icon';
-  moveIcon.src = '../../dist/setting.png';
+  moveIcon.src = setting;
   taskLabel.appendChild(moveIcon);
   taskList.appendChild(taskLabel);
   document.querySelector('.list-container').appendChild(taskList);
