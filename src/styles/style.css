@@ -81,6 +81,9 @@ body {
 .para {
   font-weight: 300;
   font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .title-header {
@@ -123,4 +126,8 @@ body {
   cursor: pointer;
   opacity: 1;
   text-decoration: underline;
+}
+
+.completed {
+  text-decoration: line-through;
 }

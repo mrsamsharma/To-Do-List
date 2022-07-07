@@ -1,8 +1,36 @@
 import './styles/style.css';
 import setting from './assets/setting.jpg';
 import refresh from './assets/refresh.jpg';
+import Task from './modules/taskAdd.js';
+import { v4 as uuidv4 } from 'uuid';
+
+const inputEnter = document.querySelector('.task-input');
+const enterBtn = document.querySelector('.enter-icon');
 
 document.querySelector('.refresh-icon').setAttribute('src', refresh);
+
+inputEnter.addEventListener('keypress', (e) => {
+  if (e.key === 'Enter') {
+    e.preventDefault();
+    if (inputEnter.value) {
+      const taskItem = new Task(uuidv4(), inputEnter.value, Task.taskArr.length + 1, false);
+      Task.taskArr.push(taskItem);
+      taskItem.add();
+      inputEnter.value = '';
+      localStorage.setItem('tasks', JSON.stringify(Task.taskArr));
+    }
+  }
+});
+
+enterBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  if (inputEnter.value) {
+    const taskItem = new Task(uuidv4(), inputEnter.value, Task.taskArr.length, false);
+    Task.taskArr.push(taskItem);
+    taskItem.add();
+    inputEnter.value = '';
+  }
+});
 
 const tasks = [
   {
@@ -56,4 +84,4 @@ const listLoad = () => {
   });
 };
 
-listLoad();
+// listLoad();
