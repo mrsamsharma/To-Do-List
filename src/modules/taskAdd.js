@@ -5,23 +5,25 @@ class Task {
     this.index = index;
     this.completed = completed;
   }
-
+  
   static taskArr = [];
-
+  
   toggleCompleted() {
     this.completed = !this.completed;
   }
-
+  
   add() {
     const taskList = document.createElement('li');
+    const moveIcon = document.createElement('i');
+    const deleteIcon = document.createElement('i');
+    const taskLabel = document.createElement('label');
+    const taskCheck = document.createElement('input');
     taskList.className = 'list';
     taskList.setAttribute('id', this.id);
-    const taskLabel = document.createElement('label');
     taskLabel.className = 'list-label';
     taskLabel.setAttribute('for', this.index);
     const checkDescContainer = document.createElement('div');
     checkDescContainer.className = 'description-container';
-    const taskCheck = document.createElement('input');
     taskCheck.setAttribute('type', 'checkbox');
     taskCheck.className = 'checkbox';
     if (this.completed) {
@@ -32,7 +34,8 @@ class Task {
       Task.markCompleted(e);
       moveIcon.classList.toggle('d-none');
       deleteIcon.classList.toggle('show-delete-icon');
-      const selected = Task.taskArr.filter((each) => e.target.parentElement.parentElement.parentElement.id === each.id)[0];
+      const pElement = e.target.parentElement.parentElement.parentElement;
+      const selected = Task.taskArr.filter((each) => pElement.id === each.id)[0];
       selected.toggleCompleted();
       localStorage.setItem('tasks', JSON.stringify(Task.taskArr));
     });
@@ -44,10 +47,11 @@ class Task {
     taskDescription.setAttribute('value', this.description);
     taskDescription.setAttribute('disabled', 'true');
     taskDescription.addEventListener('input', (e) => {
-      const selected = Task.taskArr.filter((each) => e.target.parentElement.parentElement.parentElement.id === each.id)[0];
+      const pElement = e.target.parentElement.parentElement.parentElement;
+      const selected = Task.taskArr.filter((each) => pElement.id === each.id)[0];
       selected.editDescription(e.target.value);
       localStorage.setItem('tasks', JSON.stringify(Task.taskArr));
-    })
+    });
     taskDescription.addEventListener('click', () => {
       moveIcon.classList.toggle('d-none');
       deleteIcon.classList.toggle('show-delete-icon');
@@ -64,14 +68,12 @@ class Task {
     });
     checkDescContainer.appendChild(taskDescription);
     taskLabel.appendChild(checkDescContainer);
-    const deleteIcon = document.createElement('i')
     deleteIcon.className = 'delete-icon';
     deleteIcon.addEventListener('click', (e) => {
       Task.remove(e);
       Task.reIndex();
-    })
+    });
     taskLabel.appendChild(deleteIcon);
-    const moveIcon = document.createElement('i');
     moveIcon.className = 'move-icon';
     taskLabel.appendChild(moveIcon);
     taskList.appendChild(taskLabel);
