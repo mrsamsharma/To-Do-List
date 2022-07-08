@@ -109,8 +109,8 @@ class Task {
 }
 
 if ('tasks' in localStorage) {
-  const localData = JSON.parse(localStorage.tasks);
-  localData.forEach((each) => {
+  const localList = JSON.parse(localStorage.tasks);
+  localList.forEach((each) => {
     const localTask = new Task(each.id, each.description, each.index, each.completed);
     localTask.add();
     Task.taskArr.push(localTask);
