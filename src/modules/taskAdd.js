@@ -1,7 +1,3 @@
-import setting from '../assets/setting.jpg';
-import dustbin from '../assets/dustbin.jpg';
-
-
 class Task {
   constructor(id, description, index, completed) {
     this.id = id;
@@ -84,18 +80,18 @@ class Task {
 
   static markCompleted(e) {
     e.target.parentElement.parentElement.parentElement.classList.toggle('completed');
-    //Add some style! Change array completed to true
   }
 
   static remove(e) {
-    Task.taskArr = Task.taskArr.filter((each) => e.target.parentElement.parentElement.id !== each.id);
+    const pElement = e.target.parentElement.parentElement;
+    Task.taskArr = Task.taskArr.filter((each) => pElement.id !== each.id);
     e.target.parentElement.parentElement.remove();
   }
 
   static reIndex() {
     const newTask = [];
     for (let i = 0; i < Task.taskArr.length; i += 1) {
-      newTask.push({ ...Task.taskArr[i], index: i + 1 })
+      newTask.push({ ...Task.taskArr[i], index: i + 1 });
     }
     Task.taskArr = newTask;
     localStorage.setItem('tasks', JSON.stringify(Task.taskArr));
@@ -106,7 +102,7 @@ class Task {
   }
 
   static clearAllCompleted() {
-    Task.taskArr =  Task.taskArr.filter((each) => !each.completed);
+    Task.taskArr = Task.taskArr.filter((each) => !each.completed);
   }
 }
 
@@ -116,7 +112,7 @@ if ('tasks' in localStorage) {
     const localTask = new Task(each.id, each.description, each.index, each.completed);
     localTask.add();
     Task.taskArr.push(localTask);
-  })
+  });
 }
 
 export default Task;

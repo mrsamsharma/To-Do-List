@@ -1,8 +1,7 @@
 import './styles/style.css';
-import setting from './assets/setting.jpg';
+import { v4 as uuidv4 } from 'uuid';
 import refresh from './assets/refresh.jpg';
 import Task from './modules/taskAdd.js';
-import { v4 as uuidv4 } from 'uuid';
 
 const inputEnter = document.querySelector('.task-input');
 const enterBtn = document.querySelector('.enter-icon');
@@ -40,4 +39,3 @@ enterBtn.addEventListener('click', (e) => {
     localStorage.setItem('tasks', JSON.stringify(Task.taskArr));
   }
 });
-
