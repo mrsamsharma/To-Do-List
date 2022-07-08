@@ -16,7 +16,6 @@ body {
   margin: 0 auto;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-  height: 360px;
 }
 
 .list-container {
@@ -81,6 +80,18 @@ body {
 .para {
   font-weight: 300;
   font-size: 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  border: none;
+  outline: none;
+  background-color: inherit;
+}
+
+.para:disabled {
+  background: #fff;
+  color: #000;
+  border: none;
 }
 
 .title-header {
@@ -115,12 +126,38 @@ body {
   outline: none;
   border: none;
   background-color: transparent;
-  margin: 1rem auto;
+  margin: 0 auto;
   display: block;
+  padding: 1rem 0;
 }
 
 .clearBtn:hover {
   cursor: pointer;
   opacity: 1;
   text-decoration: underline;
+}
+
+.completed {
+  text-decoration: line-through;
+  background-color: #f3ffeedb;
+}
+
+.delete-icon {
+  display: none;
+  padding: 0 1rem;
+  height: 50px;
+  width: 12px;
+  line-height: 0;
+  cursor: pointer;
+  background-image: url(../assets/dustbin.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.show-delete-icon {
+  display: inline;
+}
+
+.d-none {
+  display: none;
 }
