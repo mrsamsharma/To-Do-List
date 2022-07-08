@@ -114,8 +114,7 @@ if ('tasks' in localStorage) {
     const localTask = new Task(each.id, each.description, each.index, each.completed);
     localTask.add();
     Task.taskArr.push(localTask);
-  })
+  });
 }
-
 
 export default Task;
