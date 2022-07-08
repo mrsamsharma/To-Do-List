@@ -5,13 +5,13 @@ class Task {
     this.index = index;
     this.completed = completed;
   }
-  
+
   static taskArr = [];
-  
+
   toggleCompleted() {
     this.completed = !this.completed;
   }
-  
+
   add() {
     const taskList = document.createElement('li');
     const moveIcon = document.createElement('i');
