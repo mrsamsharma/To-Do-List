@@ -2,6 +2,178 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/modules/taskAdd.js":
+/*!********************************!*\
+  !*** ./src/modules/taskAdd.js ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var Task = /*#__PURE__*/function () {
+  function Task(id, description, index, completed) {
+    _classCallCheck(this, Task);
+
+    this.id = id;
+    this.description = description;
+    this.index = index;
+    this.completed = completed;
+  }
+
+  _createClass(Task, [{
+    key: "toggleCompleted",
+    value: function toggleCompleted() {
+      this.completed = !this.completed;
+    }
+  }, {
+    key: "add",
+    value: function add() {
+      var taskList = document.createElement('li');
+      var moveIcon = document.createElement('i');
+      var deleteIcon = document.createElement('i');
+      var taskLabel = document.createElement('label');
+      var taskCheck = document.createElement('input');
+      taskList.className = 'list';
+      taskList.setAttribute('id', this.id);
+      taskLabel.className = 'list-label';
+      taskLabel.setAttribute('for', this.index);
+      var checkDescContainer = document.createElement('div');
+      checkDescContainer.className = 'description-container';
+      taskCheck.setAttribute('type', 'checkbox');
+      taskCheck.className = 'checkbox';
+
+      if (this.completed) {
+        taskList.classList.add('completed');
+        taskCheck.setAttribute('checked', 'true');
+      }
+
+      taskCheck.addEventListener('change', function (e) {
+        Task.markCompleted(e);
+        moveIcon.classList.toggle('d-none');
+        deleteIcon.classList.toggle('show-delete-icon');
+        var pElement = e.target.parentElement.parentElement.parentElement;
+        var selected = Task.taskArr.filter(function (each) {
+          return pElement.id === each.id;
+        })[0];
+        selected.toggleCompleted();
+        localStorage.setItem('tasks', JSON.stringify(Task.taskArr));
+      });
+      checkDescContainer.appendChild(taskCheck);
+      var taskDescription = document.createElement('input');
+      taskDescription.className = 'para';
+      taskDescription.textContent = this.description;
+      taskDescription.setAttribute('type', 'text');
+      taskDescription.setAttribute('value', this.description);
+      taskDescription.setAttribute('disabled', 'true');
+      taskDescription.addEventListener('input', function (e) {
+        var pElement = e.target.parentElement.parentElement.parentElement;
+        var selected = Task.taskArr.filter(function (each) {
+          return pElement.id === each.id;
+        })[0];
+        selected.editDescription(e.target.value);
+        localStorage.setItem('tasks', JSON.stringify(Task.taskArr));
+      });
+      taskDescription.addEventListener('click', function () {
+        moveIcon.classList.toggle('d-none');
+        deleteIcon.classList.toggle('show-delete-icon');
+      });
+      checkDescContainer.addEventListener('click', function () {
+        taskDescription.removeAttribute('disabled');
+        taskDescription.setAttribute('enabled', 'true');
+      });
+      taskDescription.addEventListener('blur', function () {
+        taskDescription.removeAttribute('enabled');
+        taskDescription.setAttribute('disabled', 'true');
+        moveIcon.classList.toggle('d-none');
+        deleteIcon.classList.toggle('show-delete-icon');
+      });
+      checkDescContainer.appendChild(taskDescription);
+      taskLabel.appendChild(checkDescContainer);
+      deleteIcon.className = 'delete-icon';
+      deleteIcon.addEventListener('click', function (e) {
+        Task.remove(e);
+        Task.reIndex();
+      });
+      taskLabel.appendChild(deleteIcon);
+      moveIcon.className = 'move-icon';
+      taskLabel.appendChild(moveIcon);
+      taskList.appendChild(taskLabel);
+      document.querySelector('.list-container').appendChild(taskList);
+    }
+  }, {
+    key: "editDescription",
+    value: function editDescription(value) {
+      this.description = value;
+    }
+  }], [{
+    key: "markCompleted",
+    value: function markCompleted(e) {
+      e.target.parentElement.parentElement.parentElement.classList.toggle('completed');
+    }
+  }, {
+    key: "remove",
+    value: function remove(e) {
+      var pElement = e.target.parentElement.parentElement;
+      Task.taskArr = Task.taskArr.filter(function (each) {
+        return pElement.id !== each.id;
+      });
+      e.target.parentElement.parentElement.remove();
+    }
+  }, {
+    key: "reIndex",
+    value: function reIndex() {
+      var newTask = [];
+
+      for (var i = 0; i < Task.taskArr.length; i += 1) {
+        newTask.push(_objectSpread(_objectSpread({}, Task.taskArr[i]), {}, {
+          index: i + 1
+        }));
+      }
+
+      Task.taskArr = newTask;
+      localStorage.setItem('tasks', JSON.stringify(Task.taskArr));
+    }
+  }, {
+    key: "clearAllCompleted",
+    value: function clearAllCompleted() {
+      Task.taskArr = Task.taskArr.filter(function (each) {
+        return !each.completed;
+      });
+    }
+  }]);
+
+  return Task;
+}();
+
+_defineProperty(Task, "taskArr", []);
+
+if ('tasks' in localStorage) {
+  var localList = JSON.parse(localStorage.tasks);
+  localList.forEach(function (each) {
+    var localTask = new Task(each.id, each.description, each.index, each.completed);
+    localTask.add();
+    Task.taskArr.push(localTask);
+  });
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Task);
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/styles/style.css":
 /*!********************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/styles/style.css ***!
@@ -24,12 +196,14 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_URL_IMPORT_0___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/enter.png */ "./src/assets/enter.png"), __webpack_require__.b);
 var ___CSS_LOADER_URL_IMPORT_1___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/setting.jpg */ "./src/assets/setting.jpg"), __webpack_require__.b);
+var ___CSS_LOADER_URL_IMPORT_2___ = new URL(/* asset import */ __webpack_require__(/*! ../assets/dustbin.jpg */ "./src/assets/dustbin.jpg"), __webpack_require__.b);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap);"]);
 var ___CSS_LOADER_URL_REPLACEMENT_0___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_0___);
 var ___CSS_LOADER_URL_REPLACEMENT_1___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_1___);
+var ___CSS_LOADER_URL_REPLACEMENT_2___ = _node_modules_css_loader_dist_runtime_getUrl_js__WEBPACK_IMPORTED_MODULE_2___default()(___CSS_LOADER_URL_IMPORT_2___);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n  background-color: #fff;\r\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\r\n  height: 360px;\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-label {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic;\r\n  font-size: 15px;\r\n  outline: none;\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  gap: 1rem;\r\n  align-items: center;\r\n}\r\n\r\n.move-icon {\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  padding: 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.para {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n}\r\n\r\n.title-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0 0 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  height: 50px;\r\n}\r\n\r\n.hidden-input {\r\n  display: none;\r\n}\r\n\r\n.heading-input {\r\n  border: none;\r\n  color: #545862;\r\n  font-size: 15px;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.refresh-icon {\r\n  cursor: pointer;\r\n  padding: 0 1rem;\r\n}\r\n\r\n.clearBtn {\r\n  font-size: 16px;\r\n  opacity: 0.5;\r\n  outline: none;\r\n  border: none;\r\n  background-color: transparent;\r\n  margin: 1rem auto;\r\n  display: block;\r\n}\r\n\r\n.clearBtn:hover {\r\n  cursor: pointer;\r\n  opacity: 1;\r\n  text-decoration: underline;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAEA;EACE,SAAS;EACT,UAAU;EACV,oCAAoC;EACpC,sBAAsB;AACxB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,yCAAyC;EACzC,aAAa;AACf;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,4CAA4C;AAC9C;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,uBAAuB;EACvB,iBAAiB;EACjB,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,eAAe;EACf,6BAA6B;EAC7B,yDAA0C;EAC1C,4BAA4B;EAC5B,2BAA2B;EAC3B,WAAW;EACX,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,aAAa;EACb,SAAS;EACT,mBAAmB;AACrB;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,WAAW;EACX,cAAc;EACd,YAAY;EACZ,yDAA4C;EAC5C,4BAA4B;EAC5B,2BAA2B;AAC7B;;AAEA;EACE,eAAe;EACf,4CAA4C;AAC9C;;AAEA;EACE,gBAAgB;EAChB,eAAe;AACjB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB;EACnB,4CAA4C;EAC5C,YAAY;AACd;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,cAAc;EACd,eAAe;EACf,gBAAgB;EAChB,aAAa;AACf;;AAEA;EACE,eAAe;EACf,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,6BAA6B;EAC7B,iBAAiB;EACjB,cAAc;AAChB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,0BAA0B;AAC5B","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n  background-color: #fff;\r\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\r\n  height: 360px;\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-label {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic;\r\n  font-size: 15px;\r\n  outline: none;\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(../assets/enter.png);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  gap: 1rem;\r\n  align-items: center;\r\n}\r\n\r\n.move-icon {\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(../assets/setting.jpg);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  padding: 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.para {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n}\r\n\r\n.title-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0 0 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  height: 50px;\r\n}\r\n\r\n.hidden-input {\r\n  display: none;\r\n}\r\n\r\n.heading-input {\r\n  border: none;\r\n  color: #545862;\r\n  font-size: 15px;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.refresh-icon {\r\n  cursor: pointer;\r\n  padding: 0 1rem;\r\n}\r\n\r\n.clearBtn {\r\n  font-size: 16px;\r\n  opacity: 0.5;\r\n  outline: none;\r\n  border: none;\r\n  background-color: transparent;\r\n  margin: 1rem auto;\r\n  display: block;\r\n}\r\n\r\n.clearBtn:hover {\r\n  cursor: pointer;\r\n  opacity: 1;\r\n  text-decoration: underline;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n  background-color: #fff;\r\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-label {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic;\r\n  font-size: 15px;\r\n  outline: none;\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_0___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  gap: 1rem;\r\n  align-items: center;\r\n}\r\n\r\n.move-icon {\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_1___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  padding: 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.para {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  border: none;\r\n  outline: none;\r\n  background-color: inherit;\r\n}\r\n\r\n.para:disabled {\r\n  background: #fff;\r\n  color: #000;\r\n  border: none;\r\n}\r\n\r\n.title-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0 0 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  height: 50px;\r\n}\r\n\r\n.hidden-input {\r\n  display: none;\r\n}\r\n\r\n.heading-input {\r\n  border: none;\r\n  color: #545862;\r\n  font-size: 15px;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.refresh-icon {\r\n  cursor: pointer;\r\n  padding: 0 1rem;\r\n}\r\n\r\n.clearBtn {\r\n  font-size: 16px;\r\n  opacity: 0.5;\r\n  outline: none;\r\n  border: none;\r\n  background-color: transparent;\r\n  margin: 0 auto;\r\n  display: block;\r\n  padding: 1rem 0;\r\n}\r\n\r\n.clearBtn:hover {\r\n  cursor: pointer;\r\n  opacity: 1;\r\n  text-decoration: underline;\r\n}\r\n\r\n.completed {\r\n  text-decoration: line-through;\r\n  background-color: #f3ffeedb;\r\n}\r\n\r\n.delete-icon {\r\n  display: none;\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: pointer;\r\n  background-image: url(" + ___CSS_LOADER_URL_REPLACEMENT_2___ + ");\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.show-delete-icon {\r\n  display: inline;\r\n}\r\n\r\n.d-none {\r\n  display: none;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/styles/style.css"],"names":[],"mappings":"AAEA;EACE,SAAS;EACT,UAAU;EACV,oCAAoC;EACpC,sBAAsB;AACxB;;AAEA;EACE,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,cAAc;EACd,sBAAsB;EACtB,yCAAyC;AAC3C;;AAEA;EACE,gBAAgB;AAClB;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;AACrB;;AAEA;EACE,aAAa;EACb,4CAA4C;AAC9C;;AAEA;EACE,WAAW;EACX,YAAY;EACZ,uBAAuB;EACvB,iBAAiB;EACjB,YAAY;EACZ,kBAAkB;EAClB,eAAe;EACf,aAAa;AACf;;AAEA;EACE,eAAe;EACf,6BAA6B;EAC7B,yDAA0C;EAC1C,4BAA4B;EAC5B,2BAA2B;EAC3B,WAAW;EACX,YAAY;EACZ,YAAY;AACd;;AAEA;EACE,aAAa;EACb,SAAS;EACT,mBAAmB;AACrB;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,WAAW;EACX,cAAc;EACd,YAAY;EACZ,yDAA4C;EAC5C,4BAA4B;EAC5B,2BAA2B;AAC7B;;AAEA;EACE,eAAe;EACf,4CAA4C;AAC9C;;AAEA;EACE,gBAAgB;EAChB,eAAe;EACf,mBAAmB;EACnB,gBAAgB;EAChB,uBAAuB;EACvB,YAAY;EACZ,aAAa;EACb,yBAAyB;AAC3B;;AAEA;EACE,gBAAgB;EAChB,WAAW;EACX,YAAY;AACd;;AAEA;EACE,aAAa;EACb,8BAA8B;EAC9B,mBAAmB;EACnB,mBAAmB;EACnB,4CAA4C;EAC5C,YAAY;AACd;;AAEA;EACE,aAAa;AACf;;AAEA;EACE,YAAY;EACZ,cAAc;EACd,eAAe;EACf,gBAAgB;EAChB,aAAa;AACf;;AAEA;EACE,eAAe;EACf,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,YAAY;EACZ,aAAa;EACb,YAAY;EACZ,6BAA6B;EAC7B,cAAc;EACd,cAAc;EACd,eAAe;AACjB;;AAEA;EACE,eAAe;EACf,UAAU;EACV,0BAA0B;AAC5B;;AAEA;EACE,6BAA6B;EAC7B,2BAA2B;AAC7B;;AAEA;EACE,aAAa;EACb,eAAe;EACf,YAAY;EACZ,WAAW;EACX,cAAc;EACd,eAAe;EACf,yDAA4C;EAC5C,4BAA4B;EAC5B,2BAA2B;AAC7B;;AAEA;EACE,eAAe;AACjB;;AAEA;EACE,aAAa;AACf","sourcesContent":["@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');\r\n\r\n* {\r\n  margin: 0;\r\n  padding: 0;\r\n  font-family: 'Open Sans', sans-serif;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  background-color: #f6f6f6;\r\n}\r\n\r\n.list-wrapper {\r\n  max-width: 500px;\r\n  margin: 0 auto;\r\n  background-color: #fff;\r\n  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);\r\n}\r\n\r\n.list-container {\r\n  list-style: none;\r\n}\r\n\r\n.list-label {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.input-form {\r\n  display: flex;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.task-input {\r\n  width: 100%;\r\n  height: 42px;\r\n  padding: 0 120px 0 1rem;\r\n  line-height: 50px;\r\n  border: none;\r\n  font-style: italic;\r\n  font-size: 15px;\r\n  outline: none;\r\n}\r\n\r\n.enter-icon {\r\n  cursor: pointer;\r\n  background-color: transparent;\r\n  background-image: url(../assets/enter.png);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n  width: 40px;\r\n  height: 50px;\r\n  border: none;\r\n}\r\n\r\n.description-container {\r\n  display: flex;\r\n  gap: 1rem;\r\n  align-items: center;\r\n}\r\n\r\n.move-icon {\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: move;\r\n  background-image: url(../assets/setting.jpg);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.list {\r\n  padding: 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n}\r\n\r\n.para {\r\n  font-weight: 300;\r\n  font-size: 1rem;\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n  border: none;\r\n  outline: none;\r\n  background-color: inherit;\r\n}\r\n\r\n.para:disabled {\r\n  background: #fff;\r\n  color: #000;\r\n  border: none;\r\n}\r\n\r\n.title-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 0 0 0 1rem;\r\n  border-bottom: 1px solid rgba(0, 0, 0, 0.08);\r\n  height: 50px;\r\n}\r\n\r\n.hidden-input {\r\n  display: none;\r\n}\r\n\r\n.heading-input {\r\n  border: none;\r\n  color: #545862;\r\n  font-size: 15px;\r\n  font-weight: 400;\r\n  outline: none;\r\n}\r\n\r\n.refresh-icon {\r\n  cursor: pointer;\r\n  padding: 0 1rem;\r\n}\r\n\r\n.clearBtn {\r\n  font-size: 16px;\r\n  opacity: 0.5;\r\n  outline: none;\r\n  border: none;\r\n  background-color: transparent;\r\n  margin: 0 auto;\r\n  display: block;\r\n  padding: 1rem 0;\r\n}\r\n\r\n.clearBtn:hover {\r\n  cursor: pointer;\r\n  opacity: 1;\r\n  text-decoration: underline;\r\n}\r\n\r\n.completed {\r\n  text-decoration: line-through;\r\n  background-color: #f3ffeedb;\r\n}\r\n\r\n.delete-icon {\r\n  display: none;\r\n  padding: 0 1rem;\r\n  height: 50px;\r\n  width: 12px;\r\n  line-height: 0;\r\n  cursor: pointer;\r\n  background-image: url(../assets/dustbin.jpg);\r\n  background-repeat: no-repeat;\r\n  background-position: center;\r\n}\r\n\r\n.show-delete-icon {\r\n  display: inline;\r\n}\r\n\r\n.d-none {\r\n  display: none;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -576,6 +750,166 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./node_modules/uuid/dist/esm-browser/regex.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/uuid/dist/esm-browser/regex.js ***!
+  \*****************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (/^(?:[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}|00000000-0000-0000-0000-000000000000)$/i);
+
+/***/ }),
+
+/***/ "./node_modules/uuid/dist/esm-browser/rng.js":
+/*!***************************************************!*\
+  !*** ./node_modules/uuid/dist/esm-browser/rng.js ***!
+  \***************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ rng)
+/* harmony export */ });
+// Unique ID creation requires a high quality random # generator. In the browser we therefore
+// require the crypto API and do not support built-in fallback to lower quality random number
+// generators (like Math.random()).
+var getRandomValues;
+var rnds8 = new Uint8Array(16);
+function rng() {
+  // lazy load so that environments that need to polyfill have a chance to do so
+  if (!getRandomValues) {
+    // getRandomValues needs to be invoked in a context where "this" is a Crypto implementation. Also,
+    // find the complete implementation of crypto (msCrypto) on IE11.
+    getRandomValues = typeof crypto !== 'undefined' && crypto.getRandomValues && crypto.getRandomValues.bind(crypto) || typeof msCrypto !== 'undefined' && typeof msCrypto.getRandomValues === 'function' && msCrypto.getRandomValues.bind(msCrypto);
+
+    if (!getRandomValues) {
+      throw new Error('crypto.getRandomValues() not supported. See https://github.com/uuidjs/uuid#getrandomvalues-not-supported');
+    }
+  }
+
+  return getRandomValues(rnds8);
+}
+
+/***/ }),
+
+/***/ "./node_modules/uuid/dist/esm-browser/stringify.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/uuid/dist/esm-browser/stringify.js ***!
+  \*********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _validate_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./validate.js */ "./node_modules/uuid/dist/esm-browser/validate.js");
+
+/**
+ * Convert array of 16 byte values to UUID string format of the form:
+ * XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+ */
+
+var byteToHex = [];
+
+for (var i = 0; i < 256; ++i) {
+  byteToHex.push((i + 0x100).toString(16).substr(1));
+}
+
+function stringify(arr) {
+  var offset = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+  // Note: Be careful editing this code!  It's been tuned for performance
+  // and works in ways you may not expect. See https://github.com/uuidjs/uuid/pull/434
+  var uuid = (byteToHex[arr[offset + 0]] + byteToHex[arr[offset + 1]] + byteToHex[arr[offset + 2]] + byteToHex[arr[offset + 3]] + '-' + byteToHex[arr[offset + 4]] + byteToHex[arr[offset + 5]] + '-' + byteToHex[arr[offset + 6]] + byteToHex[arr[offset + 7]] + '-' + byteToHex[arr[offset + 8]] + byteToHex[arr[offset + 9]] + '-' + byteToHex[arr[offset + 10]] + byteToHex[arr[offset + 11]] + byteToHex[arr[offset + 12]] + byteToHex[arr[offset + 13]] + byteToHex[arr[offset + 14]] + byteToHex[arr[offset + 15]]).toLowerCase(); // Consistency check for valid UUID.  If this throws, it's likely due to one
+  // of the following:
+  // - One or more input array values don't map to a hex octet (leading to
+  // "undefined" in the uuid)
+  // - Invalid input values for the RFC `version` or `variant` fields
+
+  if (!(0,_validate_js__WEBPACK_IMPORTED_MODULE_0__["default"])(uuid)) {
+    throw TypeError('Stringified UUID is invalid');
+  }
+
+  return uuid;
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (stringify);
+
+/***/ }),
+
+/***/ "./node_modules/uuid/dist/esm-browser/v4.js":
+/*!**************************************************!*\
+  !*** ./node_modules/uuid/dist/esm-browser/v4.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _rng_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./rng.js */ "./node_modules/uuid/dist/esm-browser/rng.js");
+/* harmony import */ var _stringify_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./stringify.js */ "./node_modules/uuid/dist/esm-browser/stringify.js");
+
+
+
+function v4(options, buf, offset) {
+  options = options || {};
+  var rnds = options.random || (options.rng || _rng_js__WEBPACK_IMPORTED_MODULE_0__["default"])(); // Per 4.4, set bits for version and `clock_seq_hi_and_reserved`
+
+  rnds[6] = rnds[6] & 0x0f | 0x40;
+  rnds[8] = rnds[8] & 0x3f | 0x80; // Copy bytes to buffer, if provided
+
+  if (buf) {
+    offset = offset || 0;
+
+    for (var i = 0; i < 16; ++i) {
+      buf[offset + i] = rnds[i];
+    }
+
+    return buf;
+  }
+
+  return (0,_stringify_js__WEBPACK_IMPORTED_MODULE_1__["default"])(rnds);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (v4);
+
+/***/ }),
+
+/***/ "./node_modules/uuid/dist/esm-browser/validate.js":
+/*!********************************************************!*\
+  !*** ./node_modules/uuid/dist/esm-browser/validate.js ***!
+  \********************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _regex_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./regex.js */ "./node_modules/uuid/dist/esm-browser/regex.js");
+
+
+function validate(uuid) {
+  return typeof uuid === 'string' && _regex_js__WEBPACK_IMPORTED_MODULE_0__["default"].test(uuid);
+}
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (validate);
+
+/***/ }),
+
+/***/ "./src/assets/dustbin.jpg":
+/*!********************************!*\
+  !*** ./src/assets/dustbin.jpg ***!
+  \********************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+module.exports = __webpack_require__.p + "dustbin.jpg";
+
+/***/ }),
+
 /***/ "./src/assets/enter.png":
 /*!******************************!*\
   !*** ./src/assets/enter.png ***!
@@ -748,63 +1082,51 @@ var __webpack_exports__ = {};
   \**********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _styles_style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/style.css */ "./src/styles/style.css");
-/* harmony import */ var _assets_setting_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/setting.jpg */ "./src/assets/setting.jpg");
-/* harmony import */ var _assets_refresh_jpg__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./assets/refresh.jpg */ "./src/assets/refresh.jpg");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/dist/esm-browser/v4.js");
+/* harmony import */ var _assets_refresh_jpg__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./assets/refresh.jpg */ "./src/assets/refresh.jpg");
+/* harmony import */ var _modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/taskAdd.js */ "./src/modules/taskAdd.js");
 
 
 
-document.querySelector('.refresh-icon').setAttribute('src', _assets_refresh_jpg__WEBPACK_IMPORTED_MODULE_2__);
-var tasks = [{
-  description: 'Workout at evening',
-  completed: false,
-  index: 2
-}, {
-  description: 'wash the dishes',
-  completed: false,
-  index: 0
-}, {
-  description: 'Make protein shake',
-  completed: false,
-  index: 1
-}, {
-  description: 'Meet Bill Gates',
-  completed: false,
-  index: 3
-}];
-tasks.sort(function (a, b) {
-  return a.index - b.index;
-});
 
-var listLoad = function listLoad() {
-  tasks.forEach(function (each) {
-    var taskList = document.createElement('li');
-    taskList.className = 'list';
-    var taskLabel = document.createElement('label');
-    taskLabel.className = 'list-label';
-    taskLabel.setAttribute('for', each.index);
-    var checkDescContainer = document.createElement('div');
-    checkDescContainer.className = 'description-container';
-    var taskCheck = document.createElement('input');
-    taskCheck.setAttribute('type', 'checkbox');
-    taskCheck.className = 'checkbox';
-    checkDescContainer.appendChild(taskCheck);
-    var taskDescription = document.createElement('p');
-    taskDescription.className = 'para';
-    taskDescription.textContent = each.description;
-    checkDescContainer.appendChild(taskDescription);
-    taskLabel.appendChild(checkDescContainer);
-    var moveIcon = document.createElement('img');
-    moveIcon.className = 'move-icon';
-    moveIcon.src = _assets_setting_jpg__WEBPACK_IMPORTED_MODULE_1__;
-    taskLabel.appendChild(moveIcon);
-    taskList.appendChild(taskLabel);
-    document.querySelector('.list-container').appendChild(taskList);
+var inputEnter = document.querySelector('.task-input');
+var enterBtn = document.querySelector('.enter-icon');
+var clearBtn = document.querySelector('.clearBtn');
+document.querySelector('.refresh-icon').setAttribute('src', _assets_refresh_jpg__WEBPACK_IMPORTED_MODULE_1__);
+clearBtn.addEventListener('click', function () {
+  var selectCompleted = document.querySelectorAll('.completed');
+  selectCompleted.forEach(function (each) {
+    return each.remove();
   });
-};
+  _modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__["default"].clearAllCompleted();
+  localStorage.setItem('tasks', JSON.stringify(_modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__["default"].taskArr));
+});
+inputEnter.addEventListener('keypress', function (e) {
+  if (e.key === 'Enter') {
+    e.preventDefault();
 
-listLoad();
+    if (inputEnter.value) {
+      var taskItem = new _modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__["default"]((0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(), inputEnter.value, _modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__["default"].taskArr.length + 1, false);
+      _modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__["default"].taskArr.push(taskItem);
+      taskItem.add();
+      inputEnter.value = '';
+      localStorage.setItem('tasks', JSON.stringify(_modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__["default"].taskArr));
+    }
+  }
+});
+enterBtn.addEventListener('click', function (e) {
+  e.preventDefault();
+
+  if (inputEnter.value) {
+    var taskItem = new _modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__["default"]((0,uuid__WEBPACK_IMPORTED_MODULE_3__["default"])(), inputEnter.value, _modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__["default"].taskArr.length + 1, false);
+    _modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__["default"].taskArr.push(taskItem);
+    taskItem.add();
+    inputEnter.value = '';
+    localStorage.setItem('tasks', JSON.stringify(_modules_taskAdd_js__WEBPACK_IMPORTED_MODULE_2__["default"].taskArr));
+  }
+});
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle54e40453776fb9cecef2.js.map
+//# sourceMappingURL=bundleac0748024603fce20335.js.map
