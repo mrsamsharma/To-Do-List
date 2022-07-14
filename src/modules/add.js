@@ -64,4 +64,4 @@ const add = (id, description, index, completed) => {
   taskLabel.appendChild(moveIcon);
   taskList.appendChild(taskLabel);
   document.querySelector('.list-container').appendChild(taskList);
-}
+};

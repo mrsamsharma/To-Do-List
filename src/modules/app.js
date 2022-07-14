@@ -47,4 +47,3 @@ if ('tasks' in localStorage) {
     Task.taskArr.push(localTask);
   });
 }
-
