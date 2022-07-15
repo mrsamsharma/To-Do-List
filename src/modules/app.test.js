@@ -1,6 +1,6 @@
 import Task from './task.js';
-
-describe('Add/Remove Task', () => {
+describe('To Do List App functionalities Testing', () => {
+  describe('Add/Remove Task', () => {
   test('Add a task to the list', () => {
     document.body.innerHTML = `
     <ul class="list-container"></ul>
@@ -54,3 +54,4 @@ describe('Update Description, Mark as completed, Clear all completed', ()=> {
     expect(updatedTask).toHaveLength(1);
   })
 });
+})
