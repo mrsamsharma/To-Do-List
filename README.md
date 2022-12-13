@@ -24,9 +24,9 @@ git clone git@github.com:samWfelice/To-Do-List.git
 
 👤 **Satyam Sharma**
 
-- GitHub: [@samWfelcie](https://github.com/mrsamsharma)
-- Twitter: [@samwfelice](https://twitter.com/mrsamshx)
-- LinkedIn: [samfelice](https://www.linkedin.com/in/mrsamsharma)
+- GitHub: [@mrsamsharma](https://github.com/mrsamsharma)
+- Twitter: [@mrsamshx](https://twitter.com/mrsamshx)
+- LinkedIn: [mrsamsharma](https://www.linkedin.com/in/mrsamsharma)
 
 ## Show your support
 
